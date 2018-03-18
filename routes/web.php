@@ -10,6 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'social-auth'], function () {
+    Route::group(['prefix' => 'facebook'], function () {
+        Route::get('redirect/', ['as' => 'fb-auth', 'uses' => 'SocialAuthController@redirect']);
+        Route::get('callback/', ['as' => 'fb-callback', 'uses' => 'SocialAuthController@callback']);
+        Route::post('fb-login', ['as' => 'ajax-login-by-fb', 'uses' => 'SocialAuthController@fbLogin']);
+    });
+
+    Route::group(['prefix' => 'google'], function () {
+        Route::get('redirect/', ['as' => 'gg-auth', 'uses' => 'SocialAuthController@googleRedirect']);
+        Route::get('callback/', ['as' => 'gg-callback', 'uses' => 'SocialAuthController@googleCallback']);
+    });
+
+});
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 Route::get('/play/{code}', ['uses' => 'HomeController@play', 'as' => 'play']);
 
