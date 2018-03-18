@@ -10,7 +10,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-	<title>HomePage</title>
+	<title>List User</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="robots" content="index,follow" />
@@ -27,7 +27,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body class="pageChild">
 	<div class="wrapper">
 		<header id="header" class="header">
 			<div class="container">
@@ -42,19 +42,56 @@
 							<i class="fa fa-facebook-square " aria-hidden="true"></i> Login
 						</button>
 					</a>
+					<ul class="dropdown-menu animated fadeInRight">
+	                    <li>
+	                        <a href="change-info.html" class="infoAcount2">Personal information</a>
+	                    </li>
+	                    <li>
+	                        <a href="change-info.html#ChangePassword" class="infoAcount3">Change Password</a>
+	                    </li>
+	                    <li>
+	                        <a href="change-info.html#ChangePasswordtransaction" class="infoAcount4">Change transaction password</a>
+	                    </li>
+	                    <li class="divider"></li>
+	                    <li>
+	                        <a href="#" onclick="logout()">Logout</a>
+	                    </li>
+	                </ul>
 				</div>
 			</div>
 		</header><!-- /header -->
-		<div id="box-table" class="box-table">
-			<div class="box-table-cell">
-				<div class="container">
-					<div id="form_container">
-						<form action="#" method="POST" class="form_container">
-							<input name="url" type="text" class="shorten-input" placeholder="Paste a link to shorten it" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
-							<button id="shorten_btn" type="submit" class="btn shorten-button">Shorten</button>
-						</form>
-					</div>
-				</div>	
+		<div class="container">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+				    <tr>
+				        <th scope="row">1</th>
+				        <td>Mark</td>
+				        <td>Otto</td>
+				        <td>@mdo</td>
+				    </tr>
+				    <tr>
+				        <th scope="row">2</th>
+				        <td>Jacob</td>
+				        <td>Thornton</td>
+				        <td>@fat</td>
+				    </tr>
+				    <tr>
+				        <th scope="row">3</th>
+				        <td>Larry</td>
+				        <td>the Bird</td>
+				        <td>@twitter</td>
+				    </tr>
+				</tbody>
+				</table>
 			</div>
 		</div>		
 	</div><!-- /wrapper -->
@@ -67,12 +104,6 @@
 	<script src="lib/wow/wow.min.js"></script>
     <!-- Js Common -->
 	<script src="js/common.js"></script>
-	<script>
-		$('#box-table').css({
-			position: 'absolute',
-			top: 0,
-		});
-	</script>
 
 </body>
 </html>

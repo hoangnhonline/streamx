@@ -29,6 +29,22 @@
 </head>
 <body>
     <div class="wrapper">
+        <header id="header" class="header">
+            <div class="container">
+                <h1 class="header-logo">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ URL::asset('public/assets/images/download.svg') }}" alt="Logo">
+                    </a>
+                </h1>
+                <div class="btn-group block-btn-header">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary login-by-facebook-popup">
+                            <i class="fa fa-facebook-square " aria-hidden="true"></i> Login
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </header><!-- /header -->
         <div class="box-table">
             <div class="box-table-cell">
                 <div class="container">
@@ -64,13 +80,20 @@
             </div>
         </div>
     </div><!-- /wrapper -->
-
+    <input type="hidden" id="route-ajax-login-fb" value="{{ route('ajax-login-by-fb') }}">
+    <input type="hidden" id="fb-app-id" value="{{ env('FACEBOOK_APP_ID') }}">
     <!-- ===== JS ===== -->
     <script src="{{ URL::asset('public/assets/js/jquery.min.js') }}"></script>
     <!-- ===== JS Bootstrap ===== -->
     <script src="{{ URL::asset('public/assets/lib/bootstrap/bootstrap.min.js') }}"></script>
     <!-- Js Common -->
+    <script src="{{ URL::asset('public/assets/lib/wow/wow.min.js') }}"></script>
     <script src="{{ URL::asset('public/assets/js/common.js') }}"></script>
-
+    <script type="text/javascript">
+        $('#box-table').css({
+            position: 'absolute',
+            top: 0,
+        });
+    </script>
 </body>
 </html>
